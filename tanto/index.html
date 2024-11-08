@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Galeri</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- CSS for Animated Background -->
+    <style>
+        /* Make sure the body takes the full height of the viewport */
+        html, body {
+            height: 100%;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Gradient Background that moves */
+        body {
+            background: linear-gradient(45deg, #0084ff, #47daff, #6cff5f);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        /* Animation to move the gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Hero Section */
+        section {
+            padding: 3rem 1rem;
+            text-align: center;
+            z-index: 10;
+        }
+
+        /* Ensure the section content doesn't have extra space at the bottom */
+        section h1, section p {
+            margin-bottom: 1rem;
+        }
+
+        /* Make sure the footer does not add any space at the bottom */
+        footer {
+            display: none; /* Hides footer if not needed */
+        }
+
+        /* Additional styles to prevent unwanted space or lines */
+        body::after {
+            content: '';
+            display: block;
+            height: 1px; /* This will be invisible but can act as a boundary */
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-500 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white font-bold text-xl">Foto Galeri</a>
+            <div class="space-x-4">
+                <a href="index.html" class="text-white hover:underline">Home</a>
+                <a href="upload_photo.php" class="text-white hover:underline">Tambah Foto</a>
+                <a href="photos.php" class="text-white hover:underline">Photo</a>
+                <a href="profile.php" class="text-white hover:underline">Profil</a>
+                <a href="login.html" class="text-white hover:underline">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 text-center relative z-10">
+        <h1 class="text-4xl font-bold text-gray-700">Selamat Datang di Galeri Foto Kami!</h1>
+        <p class="text-lg text-gray-600 mt-4">Jelajahi berbagai foto yang diunggah oleh komunitas kami dan unggah foto
+            Anda sendiri.</p>
+        <a href="upload_photo.html"
+            class="mt-6 inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition">Tambah
+            Foto</a>
+    </section>
+
+    <!-- Optional Footer -->
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>&copy; 2024 Foto Galeri. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
